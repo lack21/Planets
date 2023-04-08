@@ -1,0 +1,419 @@
+// lear
+// Planets
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+//Colors
+$white: rgb(255, 255, 255);
+$black: rgb(7, 7, 36);
+$darkGrey: rgb(56, 56, 79);
+$lightGrey: rgb(131, 131, 145);
+
+//Planet Colors
+$mercury: rgb(65, 158, 187);
+$venus: rgb(237, 162, 73);
+$earth: rgb(109, 46, 213);
+$mars: rgb(209, 76, 50);
+$jupiter: rgb(216, 58, 52);
+$saturn: rgb(205, 81, 32);
+$uranus: rgb(30, 193, 162);
+$neptune: rgb(45, 104, 240);
+
+body {
+  background-color: $black;
+  background-image: url(assets/background-stars.svg);
+}
+
+// Navigation
+.nav-bar {
+  display: flex;
+  padding: 2rem 2.5%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $darkGrey;
+
+  .links-btn {
+    display: none;
+    cursor: pointer;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $white;
+    font-family: "Antonio", sans-serif;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    .link {
+      position: relative;
+      color: $white;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      opacity: 0.75;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+      cursor: pointer;
+
+      img {
+        display: none;
+      }
+
+      &.active {
+        font-size: 0.8rem;
+        opacity: 1;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: -2.8rem;
+        left: 50%;
+        content: "";
+        width: 0;
+        height: 0.2rem;
+        transition: 1.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+      }
+
+      &:hover {
+        opacity: 1;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(1)::after {
+        background-color: $mercury;
+      }
+      &:nth-child(2)::after {
+        background-color: $venus;
+      }
+      &:nth-child(3)::after {
+        background-color: $earth;
+      }
+      &:nth-child(4)::after {
+        background-color: $mars;
+      }
+      &:nth-child(5)::after {
+        background-color: $jupiter;
+      }
+      &:nth-child(6)::after {
+        background-color: $saturn;
+      }
+      &:nth-child(7)::after {
+        background-color: $uranus;
+      }
+      &:nth-child(8)::after {
+        background-color: $neptune;
+      }
+    }
+  }
+}
+
+// Main Section
+.main-section {
+  display: flex;
+  align-items: center;
+  margin: 7.5rem 10rem;
+  gap: 2rem;
+
+  .image-content {
+    width: 100%;
+    position: relative;
+
+    .big-image {
+      width: 400px;
+      margin-left: 2.5rem;
+    }
+
+    .small-image {
+      display: none;
+      position: absolute;
+      width: 150px;
+      left: calc(200px - 75px + 2.5rem);
+      bottom: -75px;
+    }
+  }
+
+  .text-content {
+    width: 550px;
+
+    .heading {
+      color: $white;
+      text-transform: uppercase;
+      font-family: "Antonio", sans-serif;
+      font-weight: 600;
+      font-size: 5rem;
+    }
+
+    .text {
+      color: $white;
+      padding: 1rem 0;
+      line-height: 1.75rem;
+      font-size: 0.9rem;
+    }
+
+    .source {
+      color: $lightGrey;
+      font-weight: 400;
+      padding-bottom: 2rem;
+      font-size: 0.975rem;
+
+      a {
+        font-weight: 600;
+        color: $white;
+        opacity: 0.5;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .btn {
+        padding: 1.25rem 1.5rem;
+        text-align: left;
+        border: 1px solid $darkGrey;
+        background-color: transparent;
+        color: $white;
+        font-weight: 800;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+
+        span {
+          opacity: 0.75;
+          padding-right: 2rem;
+        }
+
+        &:hover {
+          background-color: hsla(0, 0, 100%, 0.25);
+          transform: scale(1.05);
+          -webkit-transform: scale(1.05);
+          -moz-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+          -o-transform: scale(1.05);
+        }
+
+        &.Mercury {
+          background-color: $mercury;
+        }
+
+        &.Venus {
+          background-color: $venus;
+        }
+
+        &.Earth {
+          background-color: $earth;
+        }
+
+        &.Mars {
+          background-color: $mars;
+        }
+
+        &.Jupiter {
+          background-color: $jupiter;
+        }
+
+        &.Saturn {
+          background-color: $saturn;
+        }
+
+        &.Uranus {
+          background-color: $uranus;
+        }
+
+        &.Neptune {
+          background-color: $neptune;
+        }
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  grid-gap: 2rem;
+  width: calc(100% - 20rem);
+  margin: 5rem auto;
+
+  .item {
+    padding: 2rem 0.5rem 2rem 2rem;
+    border: 1px solid $darkGrey;
+    flex-basis: 100%;
+
+    .name {
+      font-size: 0.775rem;
+      color: $lightGrey;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .details {
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: $white;
+      padding-top: 1rem;
+      font-family: "Antonio", sans-serif;
+    }
+  }
+}
+
+@media screen and (max-width: 1168px) {
+  .main-section {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .image-content {
+    width: min(400px, 80vw) !important;
+    margin-bottom: 4rem;
+
+    .big-image {
+      margin-left: 0 !important;
+      width: 100% !important;
+    }
+
+    .small-image {
+      width: 140px !important;
+      left: calc(50% - 70px) !important;
+    }
+  }
+
+  .text-content {
+    width: min(550px, 90vw) !important;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    justify-content: center;
+
+    .logo {
+      padding-bottom: 2.5rem;
+    }
+
+    .links {
+      gap: 0;
+      width: 100%;
+      justify-content: space-between;
+
+      .link::after {
+        top: 2.8rem !important;
+      }
+    }
+  }
+
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    width: calc(100% - 10rem);
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 4rem !important;
+  }
+
+  .nav-bar {
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 1rem 5%;
+    position: relative;
+
+    .links-btn {
+      display: block !important;
+      filter: brightness(10);
+      -webkit-filter: brightness(10);
+    }
+
+    .logo {
+      padding-bottom: 0;
+    }
+
+    .links {
+      position: absolute;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      z-index: 2;
+      background-color: $black;
+      top: -100vh;
+      left: 0;
+      align-items: flex-start;
+      padding: 2rem 5%;
+      gap: 3rem !important;
+      justify-content: flex-start;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+
+      &.active {
+        top: 100%;
+      }
+
+      .link {
+        padding-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        &::after {
+          width: 90vw !important;
+          height: 0.1rem;
+          left: 0;
+          transform: translateX(0);
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+          -ms-transform: translateX(0);
+          -o-transform: translateX(0);
+        }
+
+        img {
+          display: block !important;
+        }
+      }
+    }
+  }
+}
