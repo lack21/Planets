@@ -53,6 +53,7 @@ function App() {
     setRadiusText(data[mainIndex].radius);
     setTemperatureText(data[mainIndex].temperature);
     document.querySelector(".small-image").style.display = "none";
+    ToggleLinks();
   }
 
   function ChangeFirstPlanetData(e) {
