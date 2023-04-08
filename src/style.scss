@@ -28,6 +28,7 @@ body {
   background-color: $black;
   background-image: url(assets/background-stars.svg);
   background-attachment: fixed;
+  min-height: 100dvh;
 }
 
 // Navigation
