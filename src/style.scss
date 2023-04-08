@@ -27,6 +27,7 @@ $neptune: rgb(45, 104, 240);
 body {
   background-color: $black;
   background-image: url(assets/background-stars.svg);
+  background-attachment: fixed;
 }
 
 // Navigation
