@@ -8,9 +8,6 @@
 body {
   background-color: rgb(7, 7, 36);
   background-image: url(assets/background-stars.svg);
-  background-attachment: fixed;
-  min-height: 100dvh;
-  background-position: center;
 }
 
 .nav-bar {
